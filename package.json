@@ -1,0 +1,36 @@
+{
+  "name": "csv-lookup",
+  "version": "1.0.0",
+  "description": "Quickly search and lookup rows from a csv file",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js && eslint *.js ./*/*.js test/*.js",
+    "lint": "eslint *.js ./*/*.js test/*.js --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/planemad/csv-lookup.git"
+  },
+  "keywords": [
+    "csv",
+    "lookup",
+    "hasharray"
+  ],
+  "author": "Arun Ganesh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/planemad/csv-lookup/issues"
+  },
+  "homepage": "https://github.com/planemad/csv-lookup#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "hasharray": "^1.1.1",
+    "path": "^0.12.7",
+    "treeize": "^2.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "tape": "^4.10.1"
+  }
+}
