@@ -1,5 +1,5 @@
 # lookup-csv
-A node module to quickly search and lookup rows from a csv file
+A node module to quickly search and lookup rows from a csv file using [treeize](https://www.npmjs.com/package/treeize) and [hasharray](https://www.npmjs.com/package/hasharray).
 
 ### Installation
 
