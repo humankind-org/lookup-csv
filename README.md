@@ -12,11 +12,11 @@ Install module `npm i lookup-csv`
 For a given data.csv, ensure the first row contains the column names. Adding a `.` delimiter in the column names will nest the property in the JSON result
 
 ```csv
-animal,sound
-cow,moo-moo
-swiss cow,moo-moo
-crow,kaa-kaa
-donkey,yee-haw
+animal,type,sound.type,sound.pitch
+cow,mammal,moo-moo,low
+swiss cow,mammal,moo-moo,low
+crow,bird,kaa-kaa,high
+donkey,mammal,yee-haw,low
 ```
 
 **Search a single column**
@@ -31,6 +31,10 @@ const lookupTable = lookupCSV('./path/to/data.csv', 'animal')
 matchingRows = lookupTable.get('cow')
 // {
 //     animal: 'cow',
-//     sound: 'moo-moo'
+//     type: 'mammal',
+//     sound: {
+//          type: 'moo-moo',
+//          pitch: 'low'
+//     }
 // }
 ```
