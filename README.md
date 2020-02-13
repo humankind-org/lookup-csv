@@ -1,18 +1,36 @@
 # lookup-csv
-A node module to quickly search and lookup rows from a csv file using [treeize](https://www.npmjs.com/package/treeize) and [hasharray](https://www.npmjs.com/package/hasharray).
+A node module to quickly search and lookup rows from a CSV file using a JSON API.
+
+An input CSV file is converted to an array of JSON objects using [treeize](https://www.npmjs.com/package/treeize). This is used to build a lookup table by specifying a coumn name as an index using [hasharray](https://www.npmjs.com/package/hasharray).
 
 ### Installation
 
 Install module `npm i lookup-csv`
 
+### Simple usage
+
+For a given data.csv, ensure the first row contains the column names. Adding a `.` delimiter in the column names will nest the property in the JSON result
+
+```csv
+animal,sound
+cow,moo-moo
+swiss cow,moo-moo
+crow,kaa-kaa
+donkey,yee-haw
+```
+
+**Search a single column**
+
 ```js
 const lookupCSV = require('lookup-csv');
 
 // Create a lookup table using lookup column name to use from the csv data
-const lookupTable = lookupCSV('./path/to.csv', [['lookup-col-name']])
+const lookupTable = lookupCSV('./path/to/data.csv', 'animal')
 
-// Get all mathing rows in the csv where the lookup column has the lookup value
-matchingRows = lookupTable.getAll('col-value')
+// Get rows matching lookup value
+matchingRows = lookupTable.get('cow')
+// {
+//     animal: 'cow',
+//     sound: 'moo-moo'
+// }
 ```
-
-Lookup results are formatted as an array of JSON rows
