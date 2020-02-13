@@ -1,6 +1,6 @@
 {
   "name": "lookup-csv",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Quickly search and lookup rows from a csv file",
   "main": "index.js",
   "scripts": {
