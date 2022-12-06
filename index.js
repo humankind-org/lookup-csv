@@ -48,7 +48,7 @@ function lookupCSV (filePath, keyfields, options = {
           }
           jsonObj[key.slice(0, -1).join('.')].push(line[i].trim())
         } else {
-          jsonObj[headers[i]] = line[i].trim()
+          jsonObj[headers[i]] = line[i]?.trim()
         }
       }
     }
